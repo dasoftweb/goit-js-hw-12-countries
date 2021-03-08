@@ -18,3 +18,37 @@ body {
    */
   background-image: url('./images/bg-pattern.png');
 }
+
+.wrapper {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.search-form__input {
+  width: 500px;
+  height: 50px;
+  font-size: 28px;
+  border-radius: 4px;
+  padding: 15px;
+  border: 1px solid #8b8b8b;
+  outline: none;
+}
+
+.search-form__input:hover,
+.search-form__input:focus {
+  border: 1px solid #575757;
+}
+
+/* countryListTemplate */
+
+.countries-list__item {
+  font-size: 24px;
+}
+
+/* countryCardTemplate */
+
+.country-card__title {
+  text-align: center;
+  font-size: 36px;
+}
+
