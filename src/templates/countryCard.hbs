@@ -1,10 +1,17 @@
-{{#each this}}
 <div class="country-card">
   <h2 class="country-card__title">{{this.name}}</h2>
   <div class="country-card__inner">
-    <div class="country-card__description"></div>
-    <div class="country-card__flag">{{this.flag}}</div>
+    <div class="country-card__description">
+      <p class="country-card__info"><span class="bold">Capital:</span> {{this.capital}}</p>
+      <p class="country-card__info"><span class="bold">Population:</span> {{this.population}}</p>
+      <p class="country-card__info"><span class="bold">Languages:</span></p>
+      <ul class="country-card__lang-list">
+        {{#each languages}}
+          <li class="country-card__lang-item">{{this.name}}</li>
+        {{/each}}
+      </ul>
+    </div>
+    <div class="country-card__flag"><img src="{{this.flag}}" width="190" height="190" alt="Country flag"></div>
   </div>
 </div>
 </div>
-{{/each}}

@@ -20,14 +20,18 @@ body {
 }
 
 .wrapper {
-  width: 500px;
+  width: 380px;
   margin: 0 auto;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 .search-form__input {
-  width: 500px;
-  height: 50px;
-  font-size: 28px;
+  width: 380px;
+  height: 40px;
+  font-size: 22px;
   border-radius: 4px;
   padding: 15px;
   border: 1px solid #8b8b8b;
@@ -47,8 +51,21 @@ body {
 
 /* countryCardTemplate */
 
+.country-card__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
 .country-card__title {
   text-align: center;
   font-size: 36px;
 }
 
+.country-card__description,
+.country-card__flag {
+  width: 50%;
+}
+
+.flag {
+  width: 160px;
+}

@@ -1,4 +1,5 @@
 import setting from './settings';
+import countriesApi from '../api/countries';
 import countryListTemplate from '../../templates/countryList.hbs';
 import countryCardTemplate from '../../templates/CountryCard.hbs';
 
@@ -37,19 +38,20 @@ class Countries {
 
   fetchCountries(searchQuery) {
     const url = BASE_URL + searchQuery;
-    fetch(url)
-      .then(response => {
-          return response.json();
-      })
-      .then(data => {
-        this.countries = data;
-      });
+
+    return countriesApi(url).then(result => {
+      // if (result.status === 404) {
+      //   return;
+      // }
+      this.countries = result;
+    });
   }
 
   render() {
+    console.log(this.countries);
     this.countries.length > 1
       ? (this.element.innerHTML = countryListTemplate(this.countries))
-      : (this.element.innerHTML = countryCardTemplate(this.countries));
+      : (this.element.innerHTML = countryCardTemplate(this.countries[0]));
   }
 }
 

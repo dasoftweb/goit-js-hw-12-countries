@@ -1,5 +1,5 @@
 import './styles.css';
-import {debounce as _debounce} from 'lodash';
+import debounce from 'lodash';
 import Countries from './js/api/fetchCountries';
 
 const inputRef = document.querySelector('.search-form__input');
