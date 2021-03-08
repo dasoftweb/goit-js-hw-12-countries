@@ -11,8 +11,6 @@ inputRef.addEventListener(
 );
 
 function searchCountry() {
-  if (inputRef.value) {
     const countries = new Countries('.search-results');
     countries.fetchCountries(inputRef.value);
-  }
 }

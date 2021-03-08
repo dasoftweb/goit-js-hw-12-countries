@@ -35,6 +35,10 @@ class Countries {
   }
 
   fetchCountries(searchQuery) {
+    if (!searchQuery) {
+      this.element.innerHTML = '';
+      return;
+    }
     const url = BASE_URL + searchQuery;
 
     fetch(url)
