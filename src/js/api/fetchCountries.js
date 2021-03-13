@@ -34,23 +34,27 @@ class Countries {
     this.render();
   }
 
-  fetchCountries(searchQuery) {
+  async fetchCountries(searchQuery) {
     if (!searchQuery) {
       this.element.innerHTML = '';
       return;
     }
     const url = BASE_URL + searchQuery;
 
-    fetch(url)
-      .then(response => {
-        if (response.status === 404) {
-          return;
-        }
-        return response.json();
-      })
-      .then(result => {
-        this.countries = result;
-      });
+    try {
+      const result = await fetch(url)
+        .then(response => {
+          if (response.status === 404) {
+            return;
+          }
+          return response.json();
+        })
+        .then(result => {
+          this.countries = result;
+        });
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   render() {
